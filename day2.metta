@@ -1,0 +1,30 @@
+;;!(union-atom(smith adam) (smith adam))
+;;!(subtraction-atom(smith smith lisa adam) (smith smith mary john))
+
+(person mary 64 female)
+(person smith 20 female)
+(person lisa 27 female)
+(person adam 30 male)
+(person lily 10 female)
+
+(=(getPerson $name)(match &self (person $name $age $gender)  (person $name $age $gender)))
+
+(= (getAge (person $name $age $gender))$age)
+(=(isMale (person $n $a $g))(== $g male))
+
+!(let $person (getPerson adam) 
+    ( let $age (getAge $person)
+     (let $isMale(isMale $person)
+        (if $isMale
+             (if (< $age 18)
+                 (this person is a boy)
+                 (this person is a man)
+            )
+            (if (< $age 18)
+                (this person is a girl)
+                (this person is a woman)
+                )
+            )
+        )
+     )
+ )
