@@ -1,0 +1,6 @@
+!(intersection-atom (Smith Smith Lisa Adam) (Smith Smith Mary John))
+!(union-atom  (Smith 3 John) (Smith 8 Adam))
+!(subtraction-atom (Smith Smith Lisa Adam) (Smith Smith Mary John))
+!(subtraction-atom (Smith Smith Mary John) (Smith Smith Lisa Adam))
+!(subtraction-atom (Mary John) (Lisa Adam))
+!(subtraction-atom (Lisa Adam) ())
